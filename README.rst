@@ -1,9 +1,6 @@
-.. image:: https://travis-ci.org/fabianp/pysofia.svg?branch=master
-    :target: https://travis-ci.org/fabianp/pysofia
+.. image:: https://travis-ci.org/rth/pysofia.svg?branch=master
+    :target: https://travis-ci.org/rth/pysofia
 
-Maintainer wanted
-=================
-This project is looking for a maintaner, please contact me if you would like to adopt it.
 
 PySofia
 =============================
@@ -25,7 +22,7 @@ You will not need to install sofia-ml since it is incuded in this distribution
 Installation
 ============
 
-    $ pip install -U git+https://github.com/fabianp/pysofia.git
+    $ pip install -U git+https://github.com/rth/pysofia.git
 
 
 Methods
@@ -42,7 +39,7 @@ used in scikit-learn.
 Development
 ===========
 
-Check out the latest version at github: https://github.com/fabianp/pysofia/
+Check out the latest version at github: https://github.com/rth/pysofia/
 
 License
 =======
