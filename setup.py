@@ -2,7 +2,7 @@ from distutils.core import setup, Extension
 from Cython.Distutils import build_ext
 import glob
 import numpy as np
-from setuptools import setup, Extension, Command
+from setuptools import setup, Extension
 
 sources =['pysofia/_sofia_ml.pyx'] + glob.glob('pysofia/src/*.cc')
 
