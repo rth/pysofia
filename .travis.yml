@@ -27,6 +27,7 @@ install:
     fi
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION $PYSOFIA_DEPS
   - source activate test-environment
+  - pip install coverage
   - python setup.py develop
 script:
-  - nosetests -v
+  - nosetests -vv pysofia/tests/
