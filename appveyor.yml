@@ -34,7 +34,7 @@ install:
   # create a conda virtual environement 
   - "conda create -n sofia-env numpy=1.10 scipy cython nose six scikit-learn=0.17 python=%PYTHON_VERSION%"
   - activate sofia-env
-  - python setup.py install
+  - python setup.py develop
 
 
 
