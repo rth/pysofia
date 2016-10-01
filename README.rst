@@ -3,6 +3,8 @@ PySofia
 
 .. image:: https://travis-ci.org/rth/pysofia.svg?branch=master
     :target: https://travis-ci.org/rth/pysofia
+.. image:: https://ci.appveyor.com/api/projects/status/jhn2d8n8y836pnj8/branch/master?svg=true
+    :target: https://ci.appveyor.com/project/rth/pysofia/branch/master
 
 PySofia is a python wrapper around the methods present in the C++ sofia-ml library. These include Stochastic Gradient Descent implementations of some ranking algorithms, notably RankSVM.
 
