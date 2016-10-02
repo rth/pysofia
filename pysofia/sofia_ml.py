@@ -8,7 +8,6 @@ import sys, tempfile
 import six
 import numpy as np
 from sklearn import datasets
-from . import _sofia_ml
 
 
 from enum import Enum
@@ -78,6 +77,7 @@ def svm_train(X, y, b, alpha, n_samples, n_features, learner, loop, eta,
     coef
 
     """
+    from pysofia import _sofia_ml
     if isinstance(X, six.string_types):
         if n_features is None:
             n_features = 2**17 # the default in sofia-ml TODO: parse file to see
@@ -104,6 +104,7 @@ def svm_train(X, y, b, alpha, n_samples, n_features, learner, loop, eta,
 
 def svm_predict(data, coef, predict_type=predict_type.linear, blocks=None):
     # TODO: isn't query_id in data ???
+    from pysofia import _sofia_ml
     s_coef = ' '.join(['%.5f' % e for e in coef[:-1]])
 
     if six.PY3:
@@ -146,6 +147,7 @@ def svm_update(X, y, coef, alpha, n_samples, n_features, learner, loop, eta,
     coef
 
     """
+    from pysofia import _sofia_ml
     if isinstance(X, np.ndarray):
         if n_features is None:
             n_features = X.shape[1]
