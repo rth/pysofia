@@ -36,6 +36,7 @@ class RankSVM(base.BaseEstimator):
 
     # just so that GridSearchCV doesn't complain
     predict = rank
+    predict_proba = rank
 
     def score(self, X, y):
         tau, _ = stats.kendalltau(X.dot(self.coef_), y)
