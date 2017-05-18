@@ -1,13 +1,13 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-from __future__ import unicode_literals
 
 import numpy as np
 from scipy import stats
-from sklearn import base, linear_model, cross_validation
+from sklearn import base, cross_validation
 from sklearn.externals import joblib
 from .sofia_ml import svm_train, learner_type, loop_type, eta_type
+
 
 class RankSVM(base.BaseEstimator):
     """
@@ -23,9 +23,10 @@ class RankSVM(base.BaseEstimator):
     def fit(self, X, y, query_id=None):
         n_samples, n_features = X.shape
 
-        self.coef_ = svm_train(X, y, query_id, self.alpha, n_samples, n_features,
-            learner_type.sgd_svm, loop_type.rank, eta_type.basic_eta,
-            max_iter=self.max_iter)
+        self.coef_ = svm_train(X, y, query_id, self.alpha, n_samples,
+                               n_features, learner_type.sgd_svm,
+                               loop_type.rank, eta_type.basic_eta,
+                               max_iter=self.max_iter)
         return self
 
     def rank(self, X):
@@ -40,6 +41,7 @@ class RankSVM(base.BaseEstimator):
     def score(self, X, y):
         tau, _ = stats.kendalltau(X.dot(self.coef_), y)
         return np.abs(tau)
+
 
 def _inner_fit(X, y, query_id, train, test, alpha):
     # aux method for joblib
@@ -57,8 +59,8 @@ class RankSVMCV(base.BaseEstimator):
 
     the cross-validation generator will be ShuffleSplit
     """
-    def __init__(self, alphas=np.logspace(-1, 4, 5), cv=5, 
-                    n_jobs=1, model='rank', max_iter=1000):
+    def __init__(self, alphas=np.logspace(-1, 4, 5), cv=5,
+                 n_jobs=1, model='rank', max_iter=1000):
         self.alphas = alphas
         self.max_iter = max_iter
         self.model = model

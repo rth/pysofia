@@ -22,13 +22,13 @@ install:
 
   # Replace dep1 dep2 ... with your dependencies
   - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
-       export PYSOFIA_DEPS="six numpy scipy nose cython scikit-learn=0.15 enum34";
+       export PYSOFIA_DEPS="six numpy scipy nose cython scikit-learn=0.15 enum34 pytest";
     else
-       export PYSOFIA_DEPS="six numpy scipy nose cython scikit-learn=0.18.1";
+       export PYSOFIA_DEPS="six numpy scipy nose cython scikit-learn=0.18.1 pytest";
     fi
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION $PYSOFIA_DEPS
   - source activate test-environment
   - pip install coverage
-  - python setup.py develop
+  - pip install -e .  
 script:
-  - nosetests -vv pysofia/tests/
+  - py.test -sv
