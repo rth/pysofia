@@ -1,13 +1,11 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-from __future__ import unicode_literals
 
 """
 most of this is copied from https://github.com/benhamner/Metrics
 """
 
-import numpy as np
 
 def levenshtein(s1, s2):
     if len(s1) < len(s2):

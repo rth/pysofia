@@ -32,13 +32,13 @@ install:
   - conda update -q conda
   - conda info -a
   # create a conda virtual environement 
-  - "conda create -n sofia-env numpy=1.10 scipy cython nose six scikit-learn=0.17 python=%PYTHON_VERSION%"
+  - "conda create -n sofia-env numpy=1.10 scipy cython nose pytest six scikit-learn=0.17 python=%PYTHON_VERSION%"
   - activate sofia-env
-  - python setup.py develop
+  - pip install -e .
 
 
 
 test_script:
   - "cd C:\\projects"
   - activate sofia-env # activate the virtualenv
-  - nosetests -svv pysofia/pysofia/tests/
+  - py.test -sv
