@@ -1,0 +1,5 @@
+include README.rst
+recursive-include pysofia *.py
+recursive-include pysofia *.pyx
+recursive-include pysofia *.cc
+recursive-include pysofia *.h

@@ -52,4 +52,4 @@ Apache License 2.0
 Authors
 =======
 
-PySofia is the work of Fabian Pedregosa, currently maintained by R. Yurchak. The sofia-ml library is written by D. Sculley.
+PySofia is the work of Fabian Pedregosa, currently maintained by Roman Yurchak. The sofia-ml library is written by D. Sculley.
