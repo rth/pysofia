@@ -11,7 +11,7 @@ PySofia is a python wrapper around the methods present in the C++ sofia-ml libra
 Dependencies
 ------------
 
-- cython >= 0.17 (previous versions will not work)
+- cython >= 0.17
 - numpy
 - sklearn >= 0.15
 - six
@@ -25,7 +25,7 @@ Installation
 
 ::
 
-    $ pip install -U git+https://github.com/rth/pysofia.git
+    $ pip install pysofia
 
 
 Methods
