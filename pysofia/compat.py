@@ -10,9 +10,18 @@ from .sofia_ml import svm_train, learner_type, loop_type, eta_type
 
 
 class RankSVM(base.BaseEstimator):
-    """
-    RankSVM model using stochastic gradient descent.
+    """ RankSVM model using stochastic gradient descent.
     TODO: does this fit intercept ?
+
+    Parameters
+    ----------
+    alpha : float
+
+    model : str, default='rank'
+       
+
+    max_iter : int, default=1000
+       Number of stochastic gradient steps to take
     """
 
     def __init__(self, alpha=1., model='rank', max_iter=1000):

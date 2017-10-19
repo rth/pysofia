@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 import itertools
 import numpy as np
 
+
 def transform_pairwise(X, y, blocks=None):
     """Transforms data into pairs with balanced labels for ranking
 
