@@ -6,4 +6,4 @@ from . import compat
 from .misc import transform_pairwise
 from . import datasets
 
-__version__ = '0.9'
+__version__ = '0.10.dev0'

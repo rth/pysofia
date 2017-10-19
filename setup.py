@@ -6,7 +6,7 @@ import numpy as np
 sources = ['pysofia/_sofia_ml.pyx'] + glob.glob('pysofia/src/*.cc')
 
 setup(name='pysofia',
-      version='0.9',
+      version='0.10.dev0',
       description='Python bindings for sofia-ml',
       long_description=open('README.rst').read(),
       author='Fabian Pedregosa & Csy',
